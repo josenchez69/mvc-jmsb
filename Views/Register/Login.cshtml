@@ -1,7 +1,7 @@
 ﻿@model Register
 
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = "Login";
 }
 
 
@@ -22,27 +22,10 @@
                         <label asp-for="Password"></label>
                         <input asp-for="Password" class="form-control" />
                         <span asp-validation-for="Password" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <div class="checkbox">
-                            <label asp-for="RememberMe">
-                                <input asp-for="RememberMe" />
-                                @Html.DisplayNameFor(m => m.RememberMe)
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-default">Log in</button>
                     </div>                    
-                    <p>
-                        Note that for demo purposes you don't need to register and can login with these credentials:
-                    </p>
-                    <p>
-                        User:     <b>demouser@microsoft.com</b>
-                    </p>
-                    <p>
-                        Password: <b>Pass@word1</b>
-                    </p>
+                    <div class="form-group">                        
+                        <input type="submit" value="Login" class="btn btn-primary" />
+                    </div>                                        
                 </form>
             </section>
         </div>

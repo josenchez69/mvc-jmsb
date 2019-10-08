@@ -11,22 +11,29 @@ namespace mvc_jmsb.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ContactsController : ControllerBase
+    public class ContactsController : Controller
     {
         private readonly mvc_jmsbContext _context;
-
+        
         public ContactsController(mvc_jmsbContext context)
         {
             _context = context;
         }
-
+        
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
+        /*
         // GET: api/Contacts
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Contact>>> GetContact()
+        public IActionResult GetContact()
         {
-            return await _context.Contact.ToListAsync();
+            return View();
+            //return await _context.Contact.ToListAsync();
         }
-
+        */
         // GET: api/Contacts/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Contact>> GetContact(int id)
@@ -70,13 +77,13 @@ namespace mvc_jmsb.Controllers
 
             return NoContent();
         }
-
+       
         // POST: api/Contacts
         [HttpPost]
-        public async Task<ActionResult<Contact>> PostContact(Contact contact)
+        public IActionResult Index(Contact contact)
         {
             _context.Contact.Add(contact);
-            await _context.SaveChangesAsync();
+            _context.SaveChangesAsync();
 
             return CreatedAtAction("GetContact", new { id = contact.Id }, contact);
         }
