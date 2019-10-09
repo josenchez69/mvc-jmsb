@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,8 +10,9 @@ using mvc_jmsb.Models;
 
 namespace mvc_jmsb.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    /*[Route("api/[controller]")]
+    [ApiController]*/
+    [Authorize]
     public class ContactsController : Controller
     {
         private readonly mvc_jmsbContext _context;
@@ -21,6 +23,7 @@ namespace mvc_jmsb.Controllers
         }
         
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();
@@ -80,6 +83,7 @@ namespace mvc_jmsb.Controllers
        
         // POST: api/Contacts
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult Index(Contact contact)
         {
             _context.Contact.Add(contact);

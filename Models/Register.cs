@@ -6,9 +6,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace mvc_jmsb.Models
 {
-    public class Register
+    public class RegisterLogin
     {
-        [Required]
+        [Required]        
         public string User { get; set; }
 
         [Required]
