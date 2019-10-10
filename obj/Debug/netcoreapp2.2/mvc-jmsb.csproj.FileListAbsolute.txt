@@ -63,3 +63,4 @@ C:\Users\Personal\Documents\GitHub\mvc-jmsb\obj\Debug\netcoreapp2.2\mvc-jmsb.csp
 C:\Users\Personal\Documents\GitHub\mvc-jmsb\obj\Debug\netcoreapp2.2\Razor\Views\Register\Login.cshtml.g.cs
 C:\Users\Personal\Documents\GitHub\mvc-jmsb\obj\Debug\netcoreapp2.2\Razor\Views\Contacts\Index.cshtml.g.cs
 C:\Users\Personal\Documents\GitHub\mvc-jmsb\obj\Debug\netcoreapp2.2\Razor\Views\Register\Welcome.cshtml.g.cs
+C:\Users\Personal\Documents\GitHub\mvc-jmsb\obj\Debug\netcoreapp2.2\Razor\Views\Contacts\Thanks.cshtml.g.cs

@@ -10,8 +10,10 @@ namespace mvc_jmsb.Models
     {
         public int Id { get; set; }
         [Required]
+        [StringLength(30, ErrorMessage = "Longitud Maxima de {0}")]
         public string LastName { get; set; }
-        [Required]
+        [Required]        
+        [StringLength(30, ErrorMessage = "Longitud Maxima de {0}")]
         public string Name { get; set; }
         [Required]
         [EmailAddress]
@@ -20,8 +22,10 @@ namespace mvc_jmsb.Models
         [Phone]
         public string Phone { get; set; }
         [Required]
+        [StringLength(40, ErrorMessage = "Longitud Maxima de {0}")]
         public string Address { get; set; }
         [Required]
+        [StringLength(30, ErrorMessage = "Longitud Maxima de {0}")]
         public string City { get; set; }
     }
 }

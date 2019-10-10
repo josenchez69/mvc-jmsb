@@ -88,8 +88,8 @@ namespace mvc_jmsb.Controllers
         {
             _context.Contact.Add(contact);
             _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetContact", new { id = contact.Id }, contact);
+            return View("Thanks");
+           // return CreatedAtAction("GetContact", new { id = contact.Id }, contact);
         }
 
         // DELETE: api/Contacts/5

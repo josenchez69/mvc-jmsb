@@ -9,7 +9,8 @@ namespace mvc_jmsb.Controllers
 {
     public class RegisterController : Controller
     {
-        private readonly mvc_jmsbContext _context;
+        private readonly mvc_jmsbContext _context;          
+
         public IActionResult Login()
         {
             return View();
@@ -24,9 +25,6 @@ namespace mvc_jmsb.Controllers
             {
                 if (model.User == "sa" && model.Password == "sa")
                 {
-                    //    return View(model);                
-                    //ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-                    //return View(model); 
                     return View("Welcome");
                 }
                 else
