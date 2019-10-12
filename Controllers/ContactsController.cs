@@ -28,17 +28,10 @@ namespace mvc_jmsb.Controllers
         {
             return View();
         }
-        /*
-        // GET: api/Contacts
-        [HttpGet]
-        public IActionResult GetContact()
-        {
-            return View();
-            //return await _context.Contact.ToListAsync();
-        }
-        */
+        /* 
         // GET: api/Contacts/5
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<Contact>> GetContact(int id)
         {
             var contact = await _context.Contact.FindAsync(id);
@@ -50,37 +43,7 @@ namespace mvc_jmsb.Controllers
 
             return contact;
         }
-
-        // PUT: api/Contacts/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutContact(int id, Contact contact)
-        {
-            if (id != contact.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(contact).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ContactExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-       
+        */
         // POST: api/Contacts
         [HttpPost]
         [AllowAnonymous]
@@ -88,25 +51,11 @@ namespace mvc_jmsb.Controllers
         {
             _context.Contact.Add(contact);
             _context.SaveChangesAsync();
-            return View("Thanks");
-           // return CreatedAtAction("GetContact", new { id = contact.Id }, contact);
+           return View("Thanks");
+        //   return CreatedAtAction("GetContact", new { id = contact.Id }, contact);
         }
 
-        // DELETE: api/Contacts/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Contact>> DeleteContact(int id)
-        {
-            var contact = await _context.Contact.FindAsync(id);
-            if (contact == null)
-            {
-                return NotFound();
-            }
-
-            _context.Contact.Remove(contact);
-            await _context.SaveChangesAsync();
-
-            return contact;
-        }
+       
 
         private bool ContactExists(int id)
         {

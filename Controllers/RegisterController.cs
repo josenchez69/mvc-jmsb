@@ -23,19 +23,19 @@ namespace mvc_jmsb.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                if (model.User == "sa" && model.Password == "sa")
+                if (model.User == "user" && model.Password == "1234")
                 {
                     return View("Welcome");
                 }
                 else
                 {
-                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                ModelState.AddModelError(string.Empty, "Por favor verifique su usuario y password que alguno no es el correcto");
                 return View(model);
                 }               
             }
             else
             {
-                ModelState.AddModelError(string.Empty, "Pailas");
+                ModelState.AddModelError(string.Empty, "No se pudo validar, intente mas tarde");
                 return View(model);
             }
         }
